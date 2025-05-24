@@ -19,10 +19,11 @@ public class students {
     private String StudentId;
 
     private String firstName;
-    private String middleName;
-    private String lastName;
-    private String email;
-    private String contactNumber;
+
+    private String MiddleName;
+    private String LastName;
+    private String Email;
+    private String ContactNumber;
     private String Age;
 
 
