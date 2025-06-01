@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.pradeep</groupId>
-	<artifactId>students-common </artifactId>
+	<artifactId>students_common </artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>students-common </name>
+	<name>students_common</name>
 	<description>store common part of the project </description>
 	<url/>
 	<licenses>
