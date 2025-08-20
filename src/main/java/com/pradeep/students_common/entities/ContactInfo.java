@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document
+@Document(collection = "contact_info")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +17,7 @@ public class ContactInfo {
     private String Id;
 
     @DBRef
-    private students Student;
+    private Students Student;
 
     private String First_Name;
     private String Middle_Name;

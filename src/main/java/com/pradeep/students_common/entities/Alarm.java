@@ -20,7 +20,7 @@ public class Alarm {
     private String id;
 
     @DBRef
-    private students students;
+    private Students students;
 
     private String alarmName;
 
