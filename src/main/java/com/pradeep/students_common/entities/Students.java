@@ -1,7 +1,6 @@
 package com.pradeep.students_common.entities;
 
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
@@ -14,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class students {
+public class Students {
     @Id
     private String StudentId;
 
@@ -28,10 +27,10 @@ public class students {
 
 
     @DBRef(lazy = true)
-    private List<books> bookss;
+    private List<Books> bookss;
 
     @DBRef(lazy = true)
-    private List<contactInfo> contactInfos;
+    private List<ContactInfo> contactInfos;
 
     // Additional fields can be added as needed
 }

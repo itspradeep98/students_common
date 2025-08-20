@@ -12,12 +12,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class books {
+public class Books {
     @Id
     private String id;
 
     @DBRef
-    private students Student;
+    private Students students;
 
     private String title;
 

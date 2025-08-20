@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class contactInfo {
+public class ContactInfo {
 
     private String Id;
 
