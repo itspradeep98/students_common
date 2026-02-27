@@ -1,29 +1,32 @@
 package com.pradeep.students_common.entities;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document(collection = "contact_info")
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ContactInfo {
 
-    private String Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contact_seq")
+    @SequenceGenerator(name = "contact_seq", sequenceName = "contact_seq", allocationSize = 1)
+    private Long id;
 
-    @DBRef
-    private Students Student;
+    @ManyToOne
+    private Students student;
 
-    private String First_Name;
-    private String Middle_Name;
-    private String Last_Name;
-    private List<String> Contact_Numbers;
-    private String Email;
-    private String Feild;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    @ElementCollection
+    private List<String> contactNumbers;
+    private String email;
+    private String field;
 
 }

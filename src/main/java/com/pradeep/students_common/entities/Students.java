@@ -1,36 +1,39 @@
 package com.pradeep.students_common.entities;
 
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Students {
     @Id
-    private String StudentId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_seq")
+    @SequenceGenerator(name = "student_seq", sequenceName = "student_seq", allocationSize = 1)
+    private Long studentId;
 
     private String firstName;
 
-    private String MiddleName;
-    private String LastName;
-    private String Email;
-    private String ContactNumber;
-    private String Age;
+    private String middleName;
+    private String lastName;
+    private String email;
+    private String contactNumber;
+    private String age;
 
 
-    @DBRef(lazy = true)
+    @OneToMany(mappedBy = "students", cascade = CascadeType.ALL)
     private List<Books> bookss;
 
-    @DBRef(lazy = true)
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<ContactInfo> contactInfos;
+
+    @OneToMany(mappedBy = "students", cascade = CascadeType.ALL)
+    private List<Alarm> alarms;
 
     // Additional fields can be added as needed
 }
