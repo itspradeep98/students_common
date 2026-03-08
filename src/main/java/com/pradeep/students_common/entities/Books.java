@@ -1,9 +1,6 @@
 package com.pradeep.students_common.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
@@ -13,8 +10,11 @@ import lombok.Data;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "books")
 public class Books {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "alarm_seq")
+    @SequenceGenerator(name = "book_seq", sequenceName = "book_seq", allocationSize = 1)
     private String id;
 
     @ManyToOne
